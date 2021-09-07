@@ -1,3 +1,3 @@
 [submodule "warehouse/resource-types"]
 	path = warehouse/resource-types
-	url = https://github.com/AnmolVirdi/resource-types
+	url = https://github.com/AnmolVirdi/resource-types.git
