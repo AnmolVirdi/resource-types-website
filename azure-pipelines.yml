@@ -5,5 +5,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - template: ci/pipeline.yml
-  
+- script: |
+        git clone https://github.com/AnmolVirdi/resource-types-website
+        cd resource-types-website
+        docker build -t dutyfree
+        docker run dutyfree -p 9090:9090
