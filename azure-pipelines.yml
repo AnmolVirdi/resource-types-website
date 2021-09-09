@@ -1,12 +1,39 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
 trigger:
-- master
+- main
 
-pool:
-  vmImage: ubuntu-latest
+resources:
+- repo: self
 
-steps:
-- script: |
-        git clone https://github.com/AnmolVirdi/resource-types-website
-        cd resource-types-website
-        docker build -t dutyfree
-        docker run dutyfree -p 9090:9090
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'c9411e94-5712-47b3-801a-599f190b177e'
+  imageRepository: acr-repo
+  containerRegistry: dev-resgistry
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+  
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+  jobs:  
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
