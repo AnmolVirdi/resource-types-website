@@ -2,7 +2,7 @@
 trigger:
 - master
 
-pool: abhi
+##pool: abhi
 
 variables: 
   imageName: dutyfree
