@@ -7,9 +7,9 @@ pool: abhi
 
 steps:
 - script: |
-      cd warehouse .
-      git clone https://github.com/AnmolVirdi/resource-types .
-      cd .. .
+      cd warehouse 
+      git clone https://github.com/AnmolVirdi/resource-types 
+      cd .. 
       docker build -t dutyfree .
       docker run dutyfree -p 80:9090
 #      docker-compose up --build
