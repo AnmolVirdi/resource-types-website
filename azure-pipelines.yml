@@ -1,4 +1,5 @@
 
+
 trigger:
 - master
 
@@ -6,6 +7,9 @@ pool: abhi
 
 steps:
 - script: |
+      cd warehouse .
+      git clone https://github.com/AnmolVirdi/resource-types .
+      cd .. .
       docker-compose up --build
 #      docker build -t dutyfree .
 #      docker run dutyfree -p 80:9090
