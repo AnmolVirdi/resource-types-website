@@ -9,5 +9,5 @@ variables:
 
 steps:
 - script: |
-      docker build -t $(imageName):latest .
+      docker build -t $(imageName) .
       docker run dutyfree -p 80:9090
