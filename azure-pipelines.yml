@@ -6,5 +6,6 @@ pool: abhi
 
 steps:
 - script: |
-      docker build -t dutyfree .
-      docker run dutyfree -p 80:9090
+      docker-compose up --build
+#      docker build -t dutyfree .
+#      docker run dutyfree -p 80:9090
