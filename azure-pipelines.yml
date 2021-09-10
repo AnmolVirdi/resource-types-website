@@ -2,20 +2,12 @@
 trigger:
 - master
 
-##pool: abhi
+pool: abhi
 
 variables: 
   imageName: dutyfree
 
-stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - script: |
-        docker build -t $(imageName):latest .
-        docker run dutyfree -p 80:9090
+steps:
+- script: |
+      docker build -t $(imageName):latest .
+      docker run dutyfree -p 80:9090
