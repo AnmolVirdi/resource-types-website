@@ -4,10 +4,7 @@ trigger:
 
 pool: abhi
 
-variables: 
-  imageName: dutyfree
-
 steps:
 - script: |
-      docker build -t $(imageName) .
+      docker build -t dutyfree .
       docker run dutyfree -p 80:9090
