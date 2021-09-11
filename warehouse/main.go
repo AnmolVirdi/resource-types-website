@@ -37,10 +37,15 @@ func main() {
 		port = 9090
 	}
 
-	token := "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"
+	token := os.Getenv("GH_TOKEN")
+	if token == "" {
+		panic("GH_TOKEN environment variable is not set")
+	}
 
-	ghURL := "https://api.github.com/AnmolVirdi"
-
+	ghURL := os.Getenv("GH_URL")
+	if ghURL == "" {
+		ghURL = "https://api.github.com/graphql"
+	}
 	
 	s := server.Server{
 		Port:                     port,
