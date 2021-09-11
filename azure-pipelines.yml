@@ -25,13 +25,19 @@ stages:
               cd ..
 - stage: Build
   jobs:
-  - job: Building
+  - job: TokenAddition
     steps:
         - script: |
-              echo 'ENV GH_TOKEN=$(TOKEN1)'
-              docker build -t dutyfree .
-              docker run -td -p 9090:9090 dutyfree
-              
+              echo 'ENV GH_TOKEN=$(TOKEN1)' Dockerfile
+  - job: PushingImagetoHeroku
+    steps:
+        - script: |
+              echo 'ENV GH_TOKEN=$(TOKEN1)' Dockerfile
+              heroku container:push web --app morning-harbor-44928
+  - job: ReleasingContainer
+    steps:
+      - script: |
+              heroku container:release web
 #      docker-compose up --build
 #      docker build -t dutyfree .
 #      docker run dutyfree -p 80:9090
