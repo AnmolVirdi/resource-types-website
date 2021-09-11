@@ -17,7 +17,6 @@ RUN yarn install && yarn build
 
 WORKDIR /src/warehouse
 ENV CGO_ENABLED 0
-ENV GH_TOKEN $(TOKEN)
 RUN go get -d ./...
 RUN go build -o dutyfree ./main.go
 
@@ -30,4 +29,3 @@ RUN chmod +x /usr/local/bin/dutyfree
 
 FROM dutyfree
 ENTRYPOINT ["dutyfree"]
-
