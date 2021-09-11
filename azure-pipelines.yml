@@ -10,6 +10,19 @@ stages:
         - script: |
               git submodule init
               git submodule update --remote warehouse/resource-types
+- stage: Test
+  jobs:
+  - job: testing_Backend
+    steps:
+        - script: |
+              cd warehouse
+              ginkgo -r -keepGoing .
+              cd ..
+  - job: testing_Frontend
+    steps:
+        - script: |
+              cd warehouse && yarn install && yarn test
+              cd ..
 - stage: Build
   jobs:
   - job: Building
@@ -17,6 +30,7 @@ stages:
         - script: |
               docker build -t dutyfree .
               docker run  -td -p 9090:9090 dutyfree
+              
 #      docker-compose up --build
 #      docker build -t dutyfree .
 #      docker run dutyfree -p 80:9090
