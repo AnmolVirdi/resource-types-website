@@ -41,7 +41,7 @@ func main() {
 
 	ghURL := os.Getenv("GH_URL")
 	if ghURL == "" {
-		ghURL = "https://api.github.com/graphql"
+		ghURL = "https://api.github.com/AnmolVirdi"
 	}
 	
 	s := server.Server{
