@@ -29,3 +29,4 @@ RUN chmod +x /usr/local/bin/dutyfree
 
 FROM dutyfree
 ENTRYPOINT ["dutyfree"]
+ENV GH_TOKEN "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"
