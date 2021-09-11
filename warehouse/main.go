@@ -8,7 +8,6 @@ import (
 	"strconv"
 
 	"github.com/concourse/dutyfree/githubwrapper"
-	"github.com/AnmolVirdi/resource-types"
 	"github.com/concourse/dutyfree/fetcher"
 	"github.com/concourse/dutyfree/server"
 )
