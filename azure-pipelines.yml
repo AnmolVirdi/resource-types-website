@@ -35,6 +35,9 @@ stages:
               echo 'ENV GH_TOKEN=$(TOKEN1)' Dockerfile
               heroku container:push web --app morning-harbor-44928
   - job: ReleasingContainer
+- stage: Release
+  jobs:
+  - job:
     steps:
       - script: |
               heroku container:release web
