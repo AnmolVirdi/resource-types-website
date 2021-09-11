@@ -40,9 +40,6 @@ func main() {
 	token := os.Getenv("GH_TOKEN")
 
 	ghURL := os.Getenv("GH_URL")
-	if ghURL == "" {
-		ghURL = "https://api.github.com/graphql"
-	}
 
 	s := server.Server{
 		Port:                     port,
