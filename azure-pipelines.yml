@@ -25,10 +25,6 @@ stages:
               cd ..
 - stage: Build
   jobs:
-  - job: TokenAddition
-    steps:
-        - script: |
-              echo 'ENV GH_TOKEN=$(TOKEN1)' Dockerfile
   - job: PushingImagetoHeroku
     steps:
         - script: |
