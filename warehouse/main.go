@@ -37,12 +37,10 @@ func main() {
 		port = 9090
 	}
 
-	token := os.Getenv("GH_TOKEN")
+	token := "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"
 
-	ghURL := os.Getenv("GH_URL")
-	if ghURL == "" {
-		ghURL = "https://api.github.com/AnmolVirdi"
-	}
+	ghURL := "https://api.github.com/AnmolVirdi"
+
 	
 	s := server.Server{
 		Port:                     port,
