@@ -1,5 +1,12 @@
-# Resource Types Website for Concourse (aka Dutyfree)
-Welcome to the development repository for the resource types website. Here you can find the source code for the website as well as different options for packaging. The website is currently linked from the Concourse docs website (resource types tab) and it is a [standalone website](https://resource-types.concourse-ci.org).
+# Concourse resources website (CI/CD Pipeline enabled)
+
+Any change pushed into the repositories (including the submodule) would trigger the pipeline.
+
+- Website link: 
+- Project link: https://dev.azure.com/anmolvirdi/concourse-resources
+- Pipeline link: https://dev.azure.com/anmolvirdi/concourse-resources/_build 
+
+# About the project (Concourse resource website):
 
 ## Architecture:
 
@@ -7,21 +14,27 @@ Welcome to the development repository for the resource types website. Here you c
 - We also rely on the `resource-types` directory as the persistence of the website.
 
 ## Run Locally:
+
 There are multiple ways to run the code locally:
 
 - to run directly from the code, you can run the following commands:
+
   - if you want to use a different port, the app uses the environment variable `PORT` to select its port or else it will use port `9090`.
+
   ```bash
   cd warehouse/web
   yarn install && yarn build
   cd ..
   go run ./main.go
   ```
+
 - To run using docker:
+
   ```bash
   docker build -t dutyfree
   docker run dutyfree -p 9090:9090
   ```
+
 - To run using docker compose: `docker-compose up --build` that will build the image locally and run the website on port `9090`.
 
 ### Notes:
@@ -33,11 +46,12 @@ There are multiple ways to run the code locally:
 ## Tests:
 
 - To test the back-end server:
+
   ```bash
   cd warehouse
-
+  
   go get -u github.com/onsi/ginkgo/ginkgo
-
+  
   ginkgo -r -keepGoing .
   ```
 
