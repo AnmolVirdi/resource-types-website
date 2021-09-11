@@ -28,9 +28,9 @@ stages:
   - job: Building
     steps:
         - script: |
-              echo 'ENV GH_TOKEN="$(TOKEN1)"'
+              echo 'ENV GH_TOKEN=$(TOKEN1)'
               docker build -t dutyfree .
-              docker run  -td -p 9090:9090 dutyfree
+              docker run -td -p 9090:9090 dutyfree
               
 #      docker-compose up --build
 #      docker build -t dutyfree .
