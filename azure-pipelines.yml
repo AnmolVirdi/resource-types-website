@@ -1,6 +1,9 @@
 trigger:
 - master
 
+variables:
+  GH_TOKEN: $(GH_TOKEN)
+
 pool: abhi
 stages:
 - stage: Check
