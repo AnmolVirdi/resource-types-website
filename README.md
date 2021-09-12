@@ -2,7 +2,7 @@
 
 Any change pushed into the repositories (including the submodule) would trigger the pipeline.
 
-- Website link: https://intense-wave-04461.herouapp.com 
+- Website link: https://intense-wave-04461.herokuapp.com 
 - Project link: https://dev.azure.com/anmolvirdi/concourse-resources
 - Pipeline link: https://dev.azure.com/anmolvirdi/concourse-resources/_build 
 
