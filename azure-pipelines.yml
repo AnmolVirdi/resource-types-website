@@ -4,8 +4,9 @@ trigger:
 pool: abhi
 
 variables:
-  TKK: $(GH_TOKEN1)
-  env: $TKK
+  # TKK: $(GH_TOKEN1)
+  env:
+    TKK: $(github_token)
 
 stages:
 - stage: Check
