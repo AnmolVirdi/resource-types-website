@@ -1,12 +1,7 @@
 trigger:
 - master
 
-
 pool: abhi
-
-
-variables:
-  TOKEN: $(GITHUB_TOKEN)
 
 stages:
 - stage: Check
@@ -16,9 +11,6 @@ stages:
     - script: |
               git submodule init
               git submodule update --remote warehouse/resource-types
-              echo 'ENV GH_TOKEN $env:GITHUB_TOKEN'>>Dockerfile
-              echo $env:GITHUB_TOKEN
-              cat Dockerfile
 
 - stage: Test
   jobs:
@@ -46,7 +38,7 @@ stages:
   - job: ReleasingContainer
     steps:
       - script: |
-              heroku container:release web
+              heroku container:release web --app intense-wave-04461
 #      docker-compose up --build
 #      docker build -t dutyfree .
 #      docker run dutyfree -p 80:9090
