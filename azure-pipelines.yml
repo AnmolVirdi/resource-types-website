@@ -30,7 +30,7 @@ stages:
     steps:
         - script: |
 
-              heroku container:push web --app concourse-resourses-wesbite
+              heroku container:push web --app intense-wave-04461
 
 - stage: Release
   jobs:
