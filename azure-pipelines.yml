@@ -13,9 +13,9 @@ stages:
         - script: |
               env:
                 GH_TOKEN: $(github_token)
-              git submodule init
+              git submodule init'
               git submodule update --remote warehouse/resource-types
-              echo "ENV GH_TOKEN=$(GH_TOKEN)">>Dockerfile
+              echo "ENV GH_TOKEN=\"$(GH_TOKEN)\"">>Dockerfile
               cat Dockerfile
 - stage: Test
   jobs:
