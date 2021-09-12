@@ -30,8 +30,10 @@ stages:
   - job: PushingImagetoHeroku
     steps:
         - script: |
+              heroku login -i
+              anmolvirdi70@gmail.com
+              $(pass)
               heroku container:login
-              heroku create
               heroku container:push web --app intense-wave-04461
 
 - stage: Release
