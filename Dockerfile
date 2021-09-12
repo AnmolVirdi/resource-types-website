@@ -17,7 +17,6 @@ RUN yarn install && yarn build
 
 WORKDIR /src/warehouse
 ENV CGO_ENABLED 0
-ENV GH_TOKEN=$(TKK)
 RUN go get -d ./...
 RUN go build -o dutyfree ./main.go
 
