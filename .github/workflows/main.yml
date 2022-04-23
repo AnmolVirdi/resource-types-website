@@ -2,8 +2,6 @@ name: Deploy to Heroku
 
 on:
   push:
-    branches:
-      - master
 
 jobs:
   # This workflow contains a single job called "build"
