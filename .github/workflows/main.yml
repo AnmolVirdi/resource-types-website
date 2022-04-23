@@ -39,4 +39,4 @@ jobs:
       - name: Release
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a devcation-23 web
+        run: heroku container:release web --app devcation-23
